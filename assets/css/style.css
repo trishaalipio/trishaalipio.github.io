@@ -20,15 +20,22 @@
     src: url('./fonts/BasierCircle-SemiBold.woff');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,body {
     background-color: #000000;
     font-family: 'basier-regular', Arial, sans-serif;
     font-size: 16px;
-    overflow-x: hidden;
     color: #FFFFFF;
+    font-weight: 400;
 }
 
-p { font-size: 16px; }
+p { 
+    font-size: 16px;
+    font-weight: 400;
+}
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'basier-bold', Arial, sans-serif;
@@ -40,6 +47,7 @@ h1 {
 }
 
 .fontS24 { font-size: 24px; }
+.font700 { font-weight: 700; }
 
 .colorOrange { color: var(--orange); }
 
@@ -63,6 +71,12 @@ h1 {
     font-size: 14px;
     font-weight: 600;
     border-radius: 16px;
+}
+
+.section-title {
+    font-family: 'basier-bold', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 29px;
 }
 
 /* Navigation */
@@ -103,7 +117,7 @@ h1 {
 }
 
 .main-nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1;
@@ -114,7 +128,7 @@ h1 {
 /* Hero Banner */
 .hero-banner {
     height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
     display: flex;
     align-items: center;
 }
@@ -144,6 +158,90 @@ h1 {
     margin-right: 25px;
 }
 
+/* portfolio */
+.section-title-container {
+    position: relative;
+}
+
+.svg-full {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -160px;
+}
+
+.svg-full:before {
+    content: '';
+    height: 2px;
+    background: var(--orange);
+    width: 1000px;
+    display: block;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: -950px;
+}
+
+.portfolio-card {
+    width: 100%;
+    min-height: 355px;
+    background-image: url(https://blog.addthiscdn.com/wp-content/uploads/2018/05/11124555/3-Things-Great-Websites-Have-in-Common1-672x372.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 60px;
+}
+
+.portfolio .col-lg-6 {
+    padding: 0 7px;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+/* About */
+.about {
+    padding: 60px 0 75px 0;
+}
+
+.about .name {
+    margin-bottom: 30px;
+}
+
+.about .position {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-family: 'basier-semi', Arial, sans-serif;
+}
+
+.about .description { max-width: 446px; }
+
+.about .skills-summary {
+    margin-top: 65px;
+}
+
+.skill-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-list {
+    display: flex;
+    width: 50%;
+}
+
+.check-container {
+    padding: 5px 13px 0 0;
+}
+
+.tools-container .position { padding-top: 30px; }
+
+.tools-container img {
+    max-width: 51px;
+    width: 100%;
+}
+
 /* Media Queries */
 @media(max-width: 992px){
     .nav-container-desktop {
@@ -156,6 +254,10 @@ h1 {
 
     .hero-banner .row {
         flex-direction: column-reverse;
+    }
+
+    .banner-image img {
+        padding-bottom: 32px;
     }
 
 }
