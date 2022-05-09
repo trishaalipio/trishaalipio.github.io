@@ -153,4 +153,9 @@ h1 {
     .nav-container-mobile {
         display: block;
     }
+
+    .hero-banner .row {
+        flex-direction: column-reverse;
+    }
+
 }
