@@ -60,6 +60,14 @@ h1 {
     font-size: 14px;
     font-weight: 600;
     border-radius: 16px;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.cta-fill:hover {
+    background-color: transparent;
+    color: var(--orange);
+    text-decoration: none;
 }
 
 .cta-border {
@@ -71,6 +79,13 @@ h1 {
     font-size: 14px;
     font-weight: 600;
     border-radius: 16px;
+    transition: all .3s ease;
+}
+
+.cta-border:hover {
+    background-color: var(--orange);
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .section-title {
@@ -124,6 +139,46 @@ h1 {
     background: #000000;
 }
 
+.burger-wrapper {
+    max-width: 25px;
+}
+
+.fullscreen-nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: var(--orange);
+    z-index: 999999999;
+    top: 0;
+    display: none;
+}
+
+.fullscreen-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fullscreen-nav ul li {
+    padding-bottom: 30px;
+}
+
+.fullscreen-nav ul a {
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.fullscreen-nav__wrapper {
+    height: 100%;
+}
+
+.fullscreen-nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 /* Hero Banner */
 .hero-banner {
@@ -139,6 +194,10 @@ h1 {
 
 .banner-headings h1 {
     margin-bottom: 15px;
+}
+
+.banner-headings h1 br {
+    display: none;
 }
 
 .banner-headings p {
@@ -184,12 +243,76 @@ h1 {
 .portfolio-card {
     width: 100%;
     min-height: 355px;
-    background-image: url(https://blog.addthiscdn.com/wp-content/uploads/2018/05/11124555/3-Things-Great-Websites-Have-in-Common1-672x372.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 60px;
     cursor: pointer;
+}
+
+.modal-container {
+    position: fixed;
+    z-index: 9;
+    display: none;
+    top: 0;
+    min-height: 100vh;
+    background: rgba(0,0,0,0.9);
+    min-width: 100vw;
+    left: 0;
+}
+
+.portfolio-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    background: #000000;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+}
+
+.portfolio-close {
+    cursor: pointer;
+}
+
+.portfolio-modal {
+    max-height: 800px;
+    overflow-y: overlay;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.portfolio-modal img {
+    width: 100%;
+}
+
+.portfolio .card-1 {
+    background-image: url(../images/FIRST-Thumbnail.jpg);
+}
+
+.portfolio .card-2 {
+    background-image: url(../images/Mineski-Thumbnail.jpg);
+}
+
+.portfolio .card-3 {
+    background-image: url(../images/LivClean-Thumbnail.jpg);
+}
+
+.portfolio .card-4 {
+    background-image: url(../images/Berocca-Thumbnail.jpg);
+}
+
+.portfolio .card-5 {
+    background-image: url(../images/ads-thumbnail.jpg);
+}
+
+.portfolio .card-6 {
+    background-image: url(../images/lp-ui.jpg);
 }
 
 .portfolio .col-lg-6 {
@@ -304,8 +427,18 @@ h1 {
     padding: 30px 0;
 }
 
+.portfolio-close {
+    display: none;
+}
+
 /* Media Queries */
 @media(max-width: 992px){
+
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
     .nav-container-desktop {
         display: none;
     }
@@ -320,6 +453,111 @@ h1 {
 
     .banner-image img {
         padding-bottom: 32px;
+    }
+
+    .banner-headings h1 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .banner-headings h1 br {
+        display: block;
+    }
+
+    .banner-headings p {
+        font-size: 14px;
+        line-height: 25px;
+        margin: 0;
+        padding-bottom: 30px;
+    }
+
+    .banner-cta__wrapper a:first-child {
+        margin-right: 15px;
+    }
+
+    .section-title {
+        padding-left: 40px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+
+        color: #FFFFFF;
+    }
+
+    .svg-full {
+        left: -100px;
+    }
+
+    .about .name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .about .position {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .about .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .skill-list {
+        width: 100%;
+    }
+
+    .tools-icons-wrapper {
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .tools-icon-container {
+        width: 33.33333%;
+    }
+
+    .tools-container .position {
+        padding-bottom: 30px;
+    }
+
+    .portfolio-card {
+        min-height: 180px;
+    }
+
+    .portfolio-card {
+        margin-bottom: 30px;
+    }
+
+    .footer-contact-icons-wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    
+    .footer-icon-card {
+        padding-bottom: 60px;
+    }
+
+    .footer-icon-card:last-child {
+        padding-bottom: 0;
+    }
+
+    .footer-contact-icons {
+        padding-bottom: 60px;
+    }
+
+    .social-icons h3 {
+        font-size: 18px;
+    }
+
+    .portfolio-close {
+        right: 10px;
     }
 
 }
