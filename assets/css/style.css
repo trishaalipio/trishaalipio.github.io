@@ -108,6 +108,12 @@ h1 {
     color: #FFFFFF;
     font-family: 'basier-semi', Arial, sans-serif;
     font-weight: 600;
+    transition: all .3s ease;
+}
+
+.nav-container-desktop ul a:hover {
+    text-decoration: none;
+    color: var(--orange);
 }
 
 .burger-wrapper .burger-line {
@@ -202,6 +208,12 @@ h1 {
 
 .banner-headings p {
     padding-bottom: 33px;
+}
+
+.banner-headings .eyebrow {
+    margin: 0;
+    padding-bottom: 30px;
+    font-size: 30px;
 }
 
 .banner-headings__wrapper {
@@ -308,11 +320,11 @@ h1 {
 }
 
 .portfolio .card-5 {
-    background-image: url(../images/ads-thumbnail.jpg);
+    background-image: url(../images/lp-ui.jpg);
 }
 
 .portfolio .card-6 {
-    background-image: url(../images/lp-ui.jpg);
+    background-image: url(../images/ads-thumbnail.jpg);
 }
 
 .portfolio .col-lg-6 {
@@ -470,6 +482,11 @@ h1 {
         line-height: 25px;
         margin: 0;
         padding-bottom: 30px;
+    }
+
+    .banner-headings .eyebrow {
+        font-size: 18px;
+        padding-bottom: 17px;
     }
 
     .banner-cta__wrapper a:first-child {
